@@ -1,2 +1,14 @@
-# Arkusze Praktyczne INF.03
-Rozwiązania arkuszy z części praktycznej na egzaminie INF.03
+# Egzamin praktyczny INF.03
+*Arkusze, kryteria oceny oraz rozwiązania*
+
+### Struktura plików
+W folderze każdego arkuszu znajdują sie 3 podfldery:
+- `Rozwiązanie` (pliki utworzone przez zdającego)
+- `Pliki` (pliki pobrane przez zdającego)
+- `Arkusz i kryteria` (pliki .pdf z arkuszem egzaminacyjnym oraz kryteriami oceny)
+
+### Żródła
+Arkusze oraz `Pliki` pochodzą ze strony (ee-informatyk.pl)[https://ee-informatyk.pl/inf03-ee09/praktyka/]
+Kryteria oceny pochodzą ze strony (egzaminzawodowy.info)[https://www.testy.egzaminzawodowy.info/technik-programista-arkusze-2019]
+
+<p style="text-align:center;">test</p>
