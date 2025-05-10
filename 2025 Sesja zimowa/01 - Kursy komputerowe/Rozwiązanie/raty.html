@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <title>Kursy komputerowe</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <img src="baner.png" alt="kursy komputerowe">
+        </header>
+        <nav>
+            <a href="index.html">Strona</a>
+            <a href="raty.html">Koszt rat</a>
+            <a href="https://moje-szkolenia.pl/">Nasz partner</a>
+        </nav>
+        <main>
+            <h3>Oblicz miesięczną ratę</h3>
+
+            <input type="checkbox" name="react" class="kontrolki" id="react"><label for="react">Kurs React.js</label><br>
+            <input type="checkbox" name="js" class="kontrolki" id="js"><label for="js">Kurs JavaScript</label><br>
+            <label for="raty">Liczba rat</label><input type="number" name="raty" class="kontrolki" id="raty"><br>
+
+            <select class="kontrolki" id="miasto">
+                <option value="Warszawa">Warszawa</option>
+                <option value="Katowice">Katowice</option>
+                <option value="Gdańsk">Gdańsk</option>
+            </select><br>
+
+            <button class="kontrolki" onclick="obliczRate()">Oblicz</button><br>
+
+            <p id="wynik"></p>
+        </main>
+        <footer>
+            <p>Autor strony: 00000000000</p>
+        </footer>
+
+        <script>
+            function obliczRate()
+            {
+                let kwota = 0;
+                if (react.checked == true) kwota += 5000;
+                if (js.checked == true) kwota += 3000;
+                
+                let liczba = raty.value;
+                let rata = kwota / liczba;
+
+                wynik.innerText = "Kurs odbędzie się w " + miasto.value + ". Koszt całkowity: " + kwota + " zł. Płacisz " + liczba + " rat po " + rata + " zł";
+            }
+        </script>
+    </body>
+</html>
