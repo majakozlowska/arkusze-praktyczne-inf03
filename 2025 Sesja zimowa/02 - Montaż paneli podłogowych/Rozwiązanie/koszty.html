@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <title>Montaż paneli podłogowych</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <img src="montaz_paneli.png" alt="firma usługowa">
+        </header>
+
+        <nav>
+            <a href="index.html">Strona główna</a>
+            <a href="oferta.html">Oferta</a>
+            <a href="koszty.html">Kalkulator kosztów</a>
+        </nav>
+
+        <main>
+            <h1>Kalkulator kosztów montażu</h1>
+
+            <label for="szerokosc">Szerokość pomieszczenia [m]:</label><input type="number" name="szerokosc" id="szerokosc">
+            <label for="dlugosc">Długość pomieszczenia [m]:</label><input type="number" name="dlugosc" id="dlugosc">
+
+            <p>Typ panelu</p>
+
+            <input type="radio" name="typ" id="laminowane" value="laminowane"><label for="laminowane">Panele laminowane</label><br>
+            <input type="radio" name="typ" id="winylowe" value="winylowe"><label for="winylowe">Panele winylowe</label><br>
+            <input type="radio" name="typ" id="deska" value="deska"><label for="deska">Deska podłogowa</label><br>
+
+            <button onclick="obliczKoszt()">Oblicz</button>
+
+            <p id="wynik"></p>
+        </main>
+
+        <footer>
+            <h5>Autor strony: 00000000000</h5>
+        </footer>
+
+        <script>
+            function obliczKoszt()
+            {
+                let sz = szerokosc.value;
+                let dl = dlugosc.value;
+                
+                if (sz != "" && dl != "" && (laminowane.checked || winylowe.checked || deska.checked))
+                {
+                    let pole = sz * dl;
+                    let koszt = pole;
+
+                    if (laminowane.checked) koszt *= 12;
+                    else if (winylowe.checked) koszt *= 14;
+                    else koszt *= 18;
+
+                    wynik.innerText = "Pole powierzchni pomieszczenia: " + pole + ", koszt montażu " + koszt;
+                }
+                else
+                {
+                    wynik.innerText = "Wprowadź poprawne dane.";
+                }
+            }
+        </script>
+    </body>
+</html>
